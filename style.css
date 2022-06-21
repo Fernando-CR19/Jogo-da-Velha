@@ -32,7 +32,6 @@ h1 {
     height: 100px;
     display: flex;
     justify-content: center;
-    align-items: center;
     font-size: 5rem;
 }
 
@@ -63,14 +62,13 @@ h1 {
 .mensagemReset {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
 #btnRefresh {
-    text-decoration: none;
-    width: 8rem;
-    padding: 5px;
+    width: max-content;
+    padding: 10px;
+    font-size: 2rem;
     color: white;
     background-color: black;
     border: 2px solid white;
@@ -87,5 +85,5 @@ h1 {
 .winner {
     font-size: 3rem;
     color: green;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
