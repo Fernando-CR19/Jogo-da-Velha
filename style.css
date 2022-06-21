@@ -65,8 +65,7 @@ h1 {
     align-items: center;
 }
 
-#btnRefresh {
-    width: max-content;
+#btnRefresh { 
     padding: 10px;
     font-size: 2rem;
     color: white;
