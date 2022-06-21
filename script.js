@@ -110,7 +110,6 @@ btn.addEventListener("click", function () {
     jogo[8].innerHTML = ''
     mensagem.innerHTML = ''
     fimDoJogo = false
-    espaco.style.cursor = 'pointer'
 })
 
 function pontos() {
