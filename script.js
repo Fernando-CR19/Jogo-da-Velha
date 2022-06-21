@@ -2,10 +2,17 @@ const player1 = 'X'
 const player2 = 'O'
 let currentPlayer = player1
 let fimDoJogo = false
+let numX = 0
+let numO = 0
 
-const btn = document.querySelector("#btnRefresh")
+const btn = document.querySelector("#resetarJogo")
 const jogo = document.getElementsByClassName('espaco')
 const mensagem = document.getElementsByClassName('winner')[0]
+const ptsX = document.getElementById('ptsX')
+const ptsO = document.getElementById('ptsO')
+
+ptsX.innerHTML = `X - ${numX}`
+ptsO.innerHTML = `O - ${numO}`
 
 function jogar() {
     for (let i = 0; i < jogo.length; i++) {
@@ -19,7 +26,6 @@ function jogar() {
 
             if (espaco.innerHTML === '') {
                 espaco.innerHTML = currentPlayer
-                espaco.style.cursor = 'not-allowed'
             }
 
             chegarEmpate()
@@ -27,6 +33,8 @@ function jogar() {
             checarVitoria()
 
             mudarJogador()
+
+            pontos()
 
         })
     }
@@ -91,5 +99,30 @@ function mudarJogador() {
 }
 
 btn.addEventListener("click", function () {
-    location.reload();
+    jogo[0].innerHTML = ''
+    jogo[1].innerHTML = ''
+    jogo[2].innerHTML = ''
+    jogo[3].innerHTML = ''
+    jogo[4].innerHTML = ''
+    jogo[5].innerHTML = ''
+    jogo[6].innerHTML = ''
+    jogo[7].innerHTML = ''
+    jogo[8].innerHTML = ''
+    mensagem.innerHTML = ''
+    fimDoJogo = false
+    espaco.style.cursor = 'pointer'
 })
+
+function pontos() {
+    if (mensagem.innerHTML === `X venceu!`) {
+        numX = numX + 1
+        ptsX.innerHTML = `X - ${numX}`
+        mudarJogador()
+    }
+
+    if (mensagem.innerHTML === `O venceu!`) {
+        numO = numO + 1
+        ptsO.innerHTML = `O - ${numO}`
+        mudarJogador()
+    }
+}
