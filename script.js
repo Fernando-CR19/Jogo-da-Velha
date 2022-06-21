@@ -1,12 +1,11 @@
 const player1 = 'X'
 const player2 = 'O'
 let currentPlayer = player1
-const btn = document.querySelector("#btnRefresh")
 let fimDoJogo = false
+const btn = document.querySelector("#btnRefresh")
 
 const jogo = document.getElementsByClassName('espaco')
 const mensagem = document.getElementsByClassName('winner')[0]
-
 
 function jogar() {
     for (let i = 0; i < jogo.length; i++) {
@@ -23,9 +22,9 @@ function jogar() {
                 espaco.style.cursor = 'not-allowed'
             }
 
-            checarVitoria()
-
             chegarEmpate()
+
+            checarVitoria()
 
             mudarJogador()
 
@@ -35,11 +34,16 @@ function jogar() {
 
 jogar()
 
-function mudarJogador() {
-    if (currentPlayer === player1) {
-        currentPlayer = player2
-    } else {
-        currentPlayer = player1
+function chegarEmpate() {
+    if (jogo[0].innerHTML !== '' &&
+        jogo[1].innerHTML !== '' &&
+        jogo[3].innerHTML !== '' &&
+        jogo[4].innerHTML !== '' &&
+        jogo[5].innerHTML !== '' &&
+        jogo[6].innerHTML !== '' &&
+        jogo[7].innerHTML !== '' &&
+        jogo[8].innerHTML !== '') {
+        mensagem.innerHTML = 'Empate'
     }
 }
 
@@ -78,16 +82,11 @@ function checarVitoria() {
     }
 }
 
-function chegarEmpate() {
-    if (jogo[0].innerHTML !== '' &&
-        jogo[1].innerHTML !== '' &&
-        jogo[3].innerHTML !== '' &&
-        jogo[4].innerHTML !== '' &&
-        jogo[5].innerHTML !== '' &&
-        jogo[6].innerHTML !== '' &&
-        jogo[7].innerHTML !== '' &&
-        jogo[8].innerHTML !== '') {
-        mensagem.innerHTML = 'Empate'
+function mudarJogador() {
+    if (currentPlayer === player1) {
+        currentPlayer = player2
+    } else {
+        currentPlayer = player1
     }
 }
 
