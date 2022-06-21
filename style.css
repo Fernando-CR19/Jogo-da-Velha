@@ -13,16 +13,25 @@ body {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 h1 {
     text-decoration: underline;
 }
 
+.jogo {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    justify-content: center;
+}
+
 .tabuleiro {
     display: flex;
     flex-wrap: wrap;
     width: 300px;
+    margin: 0% 0% 0% 25%  
 }
 
 .espaco {
@@ -59,13 +68,27 @@ h1 {
     border-bottom: none;
 }
 
+.contadorDePontos {
+    background-color: white;
+    width: 25%;
+    height: 100px;
+    transform: translateX(35%);
+    border: 2px solid white;
+    background-color: black;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 5rem;
+}
+
 .mensagemReset {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#btnRefresh { 
+#resetarJogo { 
     padding: 10px;
     font-size: 2rem;
     color: white;
@@ -74,7 +97,7 @@ h1 {
     border-radius: 7px;
 }
 
-#btnRefresh:hover {
+#resetarJogo:hover {
     color: black;
     background-color: white;
     border: 2px solid gray;
