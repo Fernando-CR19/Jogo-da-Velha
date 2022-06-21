@@ -2,8 +2,8 @@ const player1 = 'X'
 const player2 = 'O'
 let currentPlayer = player1
 let fimDoJogo = false
-const btn = document.querySelector("#btnRefresh")
 
+const btn = document.querySelector("#btnRefresh")
 const jogo = document.getElementsByClassName('espaco')
 const mensagem = document.getElementsByClassName('winner')[0]
 
