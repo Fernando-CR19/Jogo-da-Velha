@@ -44,7 +44,6 @@ jogar()
 
 for (let i = 0; i < jogo.length; i++) {
     const empate = jogo[i];
-
     function chegarEmpate() {
         if (empate.innerHTML !== '') {
             mensagem.innerHTML = 'Empate'
@@ -52,10 +51,7 @@ for (let i = 0; i < jogo.length; i++) {
     }
 }
 
-for (let i = 0; i < jogo.length; i++) {
-    const vitoria = jogo[i];
-
-    function checarVitoria() {
+function checarVitoria() {
     if (jogo[0].innerHTML === currentPlayer && jogo[1].innerHTML === currentPlayer && jogo[2].innerHTML === currentPlayer) {
         mensagem.innerHTML = `${currentPlayer} venceu!`
         fimDoJogo = true
@@ -89,9 +85,6 @@ for (let i = 0; i < jogo.length; i++) {
         fimDoJogo = true
     }
 }
-}
-
-
 
 function mudarJogador() {
     if (currentPlayer === player1) {
@@ -103,7 +96,6 @@ function mudarJogador() {
 
 for (let i = 0; i < jogo.length; i++) {
     const reset = jogo[i];
-    
     btn.addEventListener("click", function () {
     reset.innerHTML = ''
     mensagem.innerHTML = ''
