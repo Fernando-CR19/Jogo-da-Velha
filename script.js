@@ -104,13 +104,13 @@ for (let i = 0; i < jogo.length; i++) {
 }
 
 function pontos() {
-    if (mensagem.innerHTML === `X venceu!`) {
+    if (mensagem.innerHTML === 'X venceu!') {
         numX = numX + 1
         ptsX.innerHTML = `X - ${numX}`
         mudarJogador()
     }
 
-    if (mensagem.innerHTML === `O venceu!`) {
+    if (mensagem.innerHTML === 'O venceu!') {
         numO = numO + 1
         ptsO.innerHTML = `O - ${numO}`
         mudarJogador()
