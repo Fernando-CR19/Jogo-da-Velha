@@ -97,10 +97,10 @@ function mudarJogador() {
 for (let i = 0; i < jogo.length; i++) {
     const reset = jogo[i];
     btn.addEventListener("click", function () {
-    reset.innerHTML = ''
-    mensagem.innerHTML = ''
-    fimDoJogo = false
-})
+        reset.innerHTML = ''
+        mensagem.innerHTML = ''
+        fimDoJogo = false
+    })
 }
 
 function pontos() {
