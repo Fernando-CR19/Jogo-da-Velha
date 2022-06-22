@@ -27,8 +27,6 @@ function jogar() {
 
             mudarJogador()
 
-            pontos()
-
         })
     }
 }
