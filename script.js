@@ -33,7 +33,7 @@ function jogar() {
 
 jogar()
 
-function chegarEmpate() {
+function checarEmpate() {
     if (jogo[0].innerHTML !== '' &&
         jogo[1].innerHTML !== '' &&
         jogo[2].innerHTML !== '' &&
