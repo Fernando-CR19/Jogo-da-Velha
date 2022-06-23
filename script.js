@@ -34,15 +34,15 @@ function jogar() {
 jogar()
 
 function checarEmpate() {
-    if (jogo[0].innerHTML !== '' &&
-        jogo[1].innerHTML !== '' &&
-        jogo[2].innerHTML !== '' &&
-        jogo[3].innerHTML !== '' &&
-        jogo[4].innerHTML !== '' &&
-        jogo[5].innerHTML !== '' &&
-        jogo[6].innerHTML !== '' &&
-        jogo[7].innerHTML !== '' &&
-        jogo[8].innerHTML !== '') {
+    let deuEmpate = true
+    for (let i = 0; i < jogo.length; i++) {
+        const espaco = jogo[i];
+        if (espaco.innerHTML === '') {
+            deuEmpate = false
+        }
+    }
+
+    if(deuEmpate) {
         mensagem.innerHTML = 'Empate'
     }
 }
