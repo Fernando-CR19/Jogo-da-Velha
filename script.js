@@ -21,7 +21,7 @@ function jogar() {
                 espaco.innerHTML = currentPlayer
             }
 
-            chegarEmpate()
+            checarEmpate()
 
             checarVitoria()
 
