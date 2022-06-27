@@ -26,13 +26,12 @@ function jogar() {
 
             if (espaco.innerHTML === '') {
                 espaco.innerHTML = currentPlayer
+                mudarJogador()
             }
 
             if (!checarVitoria()) {
                 checarEmpate()
             }
-
-            mudarJogador()
 
             pontos()
 
@@ -56,51 +55,59 @@ function checarEmpate() {
     }
 }
 
-
 function checarVitoria() {
-    let vencedor = false
+    let vitoria = false
 
-    if (jogo[0].innerHTML === currentPlayer && jogo[1].innerHTML === currentPlayer && jogo[2].innerHTML === currentPlayer) {
-        mensagem.innerHTML = `${currentPlayer} venceu!`
+    if (jogo[0].innerHTML === player1 && jogo[1].innerHTML === player1 && jogo[2].innerHTML === player1 ||
+        jogo[0].innerHTML === player2 && jogo[1].innerHTML === player2 && jogo[2].innerHTML === player2) {
+        mensagem.innerHTML = `${jogo[0].innerHTML} venceu!`
         fimDoJogo = true
-        vencedor = true
+        vitoria = true
     }
-    if (jogo[3].innerHTML === currentPlayer && jogo[4].innerHTML === currentPlayer && jogo[5].innerHTML === currentPlayer) {
-        mensagem.innerHTML = `${currentPlayer} venceu!`
+    if (jogo[3].innerHTML === player1 && jogo[4].innerHTML === player1 && jogo[5].innerHTML === player1 ||
+        jogo[3].innerHTML === player2 && jogo[4].innerHTML === player2 && jogo[5].innerHTML === player2) {
+        mensagem.innerHTML = `${jogo[3].innerHTML} venceu!`
         fimDoJogo = true
-        vencedor = true
+        vitoria = true
     }
-    if (jogo[6].innerHTML === currentPlayer && jogo[7].innerHTML === currentPlayer && jogo[8].innerHTML === currentPlayer) {
-        mensagem.innerHTML = `${currentPlayer} venceu!`
+    if (jogo[6].innerHTML === player1 && jogo[7].innerHTML === player1 && jogo[8].innerHTML === player1 ||
+        jogo[6].innerHTML === player2 && jogo[7].innerHTML === player2 && jogo[8].innerHTML === player2) {
+        mensagem.innerHTML = `${jogo[6].innerHTML} venceu!`
         fimDoJogo = true
-        vencedor = true
+        vitoria = true
     }
-    if (jogo[0].innerHTML === currentPlayer && jogo[3].innerHTML === currentPlayer && jogo[6].innerHTML === currentPlayer) {
-        mensagem.innerHTML = `${currentPlayer} venceu!`
+    if (jogo[0].innerHTML === player1 && jogo[3].innerHTML === player1 && jogo[6].innerHTML === player1 ||
+        jogo[0].innerHTML === player2 && jogo[3].innerHTML === player2 && jogo[6].innerHTML === player2) {
+        mensagem.innerHTML = `${jogo[6].innerHTML} venceu!`
         fimDoJogo = true
-        vencedor = true
+        vitoria = true
     }
-    if (jogo[1].innerHTML === currentPlayer && jogo[4].innerHTML === currentPlayer && jogo[7].innerHTML === currentPlayer) {
-        mensagem.innerHTML = `${currentPlayer} venceu!`
+    if (jogo[1].innerHTML === player1 && jogo[4].innerHTML === player1 && jogo[7].innerHTML === player1 ||
+        jogo[1].innerHTML === player2 && jogo[4].innerHTML === player2 && jogo[7].innerHTML === player2) {
+        mensagem.innerHTML = `${jogo[1].innerHTML} venceu!`
         fimDoJogo = true
-        vencedor = true
+        vitoria = true
     }
-    if (jogo[2].innerHTML === currentPlayer && jogo[5].innerHTML === currentPlayer && jogo[8].innerHTML === currentPlayer) {
-        mensagem.innerHTML = `${currentPlayer} venceu!`
+    if (jogo[2].innerHTML === player1 && jogo[5].innerHTML === player1 && jogo[8].innerHTML === player1 ||
+        jogo[2].innerHTML === player2 && jogo[5].innerHTML === player2 && jogo[8].innerHTML === player2) {
+        mensagem.innerHTML = `${jogo[2].innerHTML} venceu!`
         fimDoJogo = true
-        vencedor = true
+        vitoria = true
     }
-    if (jogo[0].innerHTML === currentPlayer && jogo[4].innerHTML === currentPlayer && jogo[8].innerHTML === currentPlayer) {
-        mensagem.innerHTML = `${currentPlayer} venceu!`
+    if (jogo[0].innerHTML === player1 && jogo[4].innerHTML === player1 && jogo[8].innerHTML === player1 ||
+        jogo[0].innerHTML === player2 && jogo[4].innerHTML === player2 && jogo[8].innerHTML === player2) {
+        mensagem.innerHTML = `${jogo[0].innerHTML} venceu!`
         fimDoJogo = true
-        vencedor = true
+        vitoria = true
     }
-    if (jogo[2].innerHTML === currentPlayer && jogo[4].innerHTML === currentPlayer && jogo[6].innerHTML === currentPlayer) {
-        mensagem.innerHTML = `${currentPlayer} venceu!`
+    if (jogo[2].innerHTML === player1 && jogo[4].innerHTML === player1 && jogo[6].innerHTML === player1 ||
+        jogo[2].innerHTML === player2 && jogo[4].innerHTML === player2 && jogo[6].innerHTML === player2) {
+        mensagem.innerHTML = `${jogo[2].innerHTML} venceu!`
         fimDoJogo = true
-        vencedor = true
+        vitoria = true
     }
-    return vencedor
+
+    return vitoria
 }
 
 function mudarJogador() {
@@ -114,9 +121,9 @@ function mudarJogador() {
 btn.addEventListener("click", function () {
     for (let i = 0; i < jogo.length; i++) {
         const espaco = jogo[i];
-        espaco.innerHTML = ''        
+        espaco.innerHTML = ''
     }
-    
+
     mensagem.innerHTML = ''
     fimDoJogo = false
     mudarJogador()
