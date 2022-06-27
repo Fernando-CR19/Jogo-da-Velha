@@ -6,18 +6,22 @@
 
 body {
     font-size: 2rem;
-    background-color: black;
+    background: url(/LGbP.gif);
+    background-size: 100vw;
     color: white;
     height: 100vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    overflow-x: hidden;
 }
 
 h1 {
     text-decoration: underline;
+    background-image: linear-gradient(to bottom, #001B32, #FFFFEB, #333333);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .jogo {
@@ -29,42 +33,26 @@ h1 {
 .tabuleiro {
     display: flex;
     flex-wrap: wrap;
-    width: 300px;
+    width: 310px;
     margin-left: 39%;
 }
 
 .espaco {
-    border: 3px solid white;
+    border: 3px solid black;
+    margin: 1px;
     border-radius: 7px;
     width: 100px;
     height: 100px;
     display: flex;
     justify-content: center;
     font-size: 5rem;
-}
+    color: #141F2D;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}   
 
-.espaco:nth-child(1),
-.espaco:nth-child(2),
-.espaco:nth-child(3) {
-    border-top: none;
-}
-
-.espaco:nth-child(1),
-.espaco:nth-child(4),
-.espaco:nth-child(7) {
-    border-left: none;
-}
-
-.espaco:nth-child(3),
-.espaco:nth-child(6),
-.espaco:nth-child(9) {
-    border-right: none;
-}
-
-.espaco:nth-child(7),
-.espaco:nth-child(8),
-.espaco:nth-child(9) {
-    border-bottom: none;
+.espaco:hover {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .pontuacao {
@@ -72,6 +60,8 @@ h1 {
     height: 55px;
     transform: translateX(50%);
     border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     border-radius: 7px;
     font-size: 3rem;
     display: flex;
@@ -87,22 +77,24 @@ h1 {
 #btnRestart { 
     padding: 10px;
     font-size: 2rem;
-    color: white;
-    background-color: black;
-    border: 2px solid white;
+    color: black;
+    background-color: transparent;
     border-radius: 7px;
 }
 
 #btnRestart:hover {
-    color: black;
-    background-color: white;
-    border: 2px solid gray;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid white;
     transition: 0.3s;
 }
 
 .winner {
     font-size: 3rem;
-    color: green;
     margin-bottom: 1rem;
     height: 55px;
+    background-image: linear-gradient(to bottom, #172A24, #01320B, #05BD68);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
