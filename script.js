@@ -52,6 +52,7 @@ function checarEmpate() {
 
     if (deuEmpate) {
         mensagem.innerHTML = 'Empate'
+        mudarJogador()
     }
 }
 
