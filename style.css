@@ -1,13 +1,13 @@
 * {
     margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 
 body {
     font-size: 2rem;
-    background: url(/background/Black\ Hole.gif);
-    background-size: 100vw;
+    background: url(/Jogo-da-Velha/background/Black\ Hole.gif);
+    font-family: 'Orbitron', sans-serif;
+    background-size: cover;
     color: white;
     height: 100vh;
     display: flex;
@@ -17,7 +17,7 @@ body {
 }
 
 h1 {
-    text-decoration: underline;
+    text-align: center;
     background-image: linear-gradient(to bottom, #001B32, #FFFFEB, #333333);
     background-clip: text;
     -webkit-background-clip: text;
@@ -28,25 +28,26 @@ h1 {
     display: flex;
     align-items: center;
     width: 100vw;
+    justify-content: center;
+    min-width: 350px;
 }
 
 .tabuleiro {
     display: flex;
     flex-wrap: wrap;
     width: 310px;
-    margin-left: 39%;
 }
 
 .espaco {
-    border: 3px solid black;
+    border: 3.5px solid black;
     margin: 1px;
     border-radius: 7px;
     width: 100px;
     height: 100px;
     display: flex;
     justify-content: center;
-    font-size: 5rem;
-    color: #141F2D;
+    font-size: 4rem;
+    color: gray;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }   
@@ -56,16 +57,16 @@ h1 {
 }
 
 .pontuacao {
-    width: 250px;
-    height: 55px;
-    transform: translateX(50%);
-    border: 2px solid white;
+    width: 275px;
+    height: 65px;
+    border: 3.5px solid white;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border-radius: 7px;
-    font-size: 3rem;
+    font-size: 2.5rem;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 1.5rem;
 }
 
 .mensagemReset {
@@ -77,20 +78,22 @@ h1 {
 #btnRestart { 
     padding: 10px;
     font-size: 2rem;
+    font-family: 'Orbitron', sans-serif;
     color: black;
     background-color: transparent;
+    border: 3.5px solid black;
     border-radius: 7px;
 }
 
 #btnRestart:hover {
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
-    border: 2px solid white;
+    border: 3.5px solid white;
     transition: 0.3s;
 }
 
 .winner {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     height: 55px;
     background-image: linear-gradient(to bottom, #172A24, #01320B, #05BD68);
