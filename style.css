@@ -50,7 +50,7 @@ h1 {
     color: gray;
     cursor: pointer;
     transition: 0.3s ease-in-out;
-}   
+}
 
 .espaco:hover {
     background-color: rgba(0, 0, 0, 0.5);
@@ -75,7 +75,7 @@ h1 {
     align-items: center;
 }
 
-#btnRestart { 
+#btnRestart {
     padding: 10px;
     font-size: 2rem;
     font-family: 'Orbitron', sans-serif;
