@@ -126,11 +126,9 @@ btn.addEventListener("click", function () {
     for (let i = 0; i < jogo.length; i++) {
         const espaco = jogo[i];
         espaco.innerHTML = ''
-        if (espaco.innerHTML !== '') {
-            mudarJogador()
-        }
     }
 
     mensagem.innerHTML = ''
     fimDoJogo = false
+    mudarJogador()
 })
