@@ -169,5 +169,9 @@ btn.addEventListener("click", function () {
     fimDoJogo = false
     linha.style.display = 'none'
     linha.style.position = 'absolute'
+    linha.style.transform = 'rotate(0deg)'
+    linha.style.top = '0px'
+    linha.style.left = '0px'
+    linha.style.width = '350px'
     mudarJogador()
 })
