@@ -10,6 +10,7 @@ const jogo = document.getElementsByClassName('espaco')
 const mensagem = document.getElementsByClassName('winner')[0]
 const ptsX = document.getElementById('pontosX')
 const ptsO = document.getElementById('pontosO')
+const linha = document.getElementById('linha')
 
 ptsX.innerHTML = `${player1} - ${pontosX}`
 ptsO.innerHTML = `${player2} - ${pontosO}`
@@ -47,41 +48,77 @@ function checarVitoria() {
         mensagem.innerHTML = `${currentPlayer} venceu!`
         fimDoJogo = true
         vitoria = true
+        linha.style.display = 'flex'
+        linha.style.position = 'relative'
+        linha.style.top = '-548px'
     }
     if (jogo[3].innerHTML !== '' && jogo[3].innerHTML === jogo[4].innerHTML && jogo[4].innerHTML === jogo[5].innerHTML) {
         mensagem.innerHTML = `${currentPlayer} venceu!`
         fimDoJogo = true
         vitoria = true
+        linha.style.display = 'flex'
+        linha.style.position = 'relative'
+        linha.style.top = '-447px'
     }
     if (jogo[6].innerHTML !== '' && jogo[6].innerHTML === jogo[7].innerHTML && jogo[7].innerHTML === jogo[8].innerHTML) {
         mensagem.innerHTML = `${currentPlayer} venceu!`
         fimDoJogo = true
         vitoria = true
+        linha.style.display = 'flex'
+        linha.style.position = 'relative'
+        linha.style.top = '-346px'
     }
     if (jogo[0].innerHTML !== '' && jogo[0].innerHTML === jogo[3].innerHTML && jogo[3].innerHTML === jogo[6].innerHTML) {
         mensagem.innerHTML = `${currentPlayer} venceu!`
         fimDoJogo = true
         vitoria = true
+        linha.style.display = 'flex'
+        linha.style.position = 'relative'
+        linha.style.transform = 'rotate(90deg)'
+        linha.style.top = '-440px'
+        linha.style.left = '-104px'
     }
     if (jogo[1].innerHTML !== '' && jogo[1].innerHTML === jogo[4].innerHTML && jogo[4].innerHTML === jogo[7].innerHTML) {
         mensagem.innerHTML = `${currentPlayer} venceu!`
         fimDoJogo = true
         vitoria = true
+        linha.style.display = 'flex'
+        linha.style.position = 'relative'
+        linha.style.transform = 'rotate(90deg)'
+        linha.style.top = '-440px'
+        linha.style.left = '0px'
     }
     if (jogo[2].innerHTML !== '' && jogo[2].innerHTML === jogo[5].innerHTML && jogo[5].innerHTML === jogo[8].innerHTML) {
         mensagem.innerHTML = `${currentPlayer} venceu!`
         fimDoJogo = true
         vitoria = true
+        linha.style.display = 'flex'
+        linha.style.position = 'relative'
+        linha.style.transform = 'rotate(90deg)'
+        linha.style.top = '-440px'
+        linha.style.left = '104px'
     }
     if (jogo[0].innerHTML !== '' && jogo[0].innerHTML === jogo[4].innerHTML && jogo[4].innerHTML === jogo[8].innerHTML) {
         mensagem.innerHTML = `${currentPlayer} venceu!`
         fimDoJogo = true
         vitoria = true
+        linha.style.display = 'flex'
+        linha.style.position = 'relative'
+        linha.style.transform = 'rotate(45deg)'
+        linha.style.width = '460px'
+        linha.style.top = '-445px'
+        linha.style.left = '-53px'
     }
     if (jogo[2].innerHTML !== '' && jogo[2].innerHTML === jogo[4].innerHTML && jogo[4].innerHTML === jogo[6].innerHTML) {
         mensagem.innerHTML = `${currentPlayer} venceu!`
         fimDoJogo = true
         vitoria = true
+        linha.style.display = 'flex'
+        linha.style.position = 'relative'
+        linha.style.transform = 'rotate(-45deg)'
+        linha.style.width = '460px'
+        linha.style.top = '-445px'
+        linha.style.left = '-53px'
     }
 
     return vitoria
@@ -130,5 +167,7 @@ btn.addEventListener("click", function () {
 
     mensagem.innerHTML = ''
     fimDoJogo = false
+    linha.style.display = 'none'
+    linha.style.position = 'absolute'
     mudarJogador()
 })
