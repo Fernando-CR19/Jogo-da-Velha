@@ -1,6 +1,6 @@
 const player1 = '❌'
 const player2 = '⭕'
-let currentPlayer = player1
+let jogadorAtual = player1
 let fimDoJogo = false
 let pontosX = 0
 let pontosO = 0
@@ -11,9 +11,6 @@ const mensagem = document.getElementsByClassName('winner')[0]
 const ptsX = document.getElementById('pontosX')
 const ptsO = document.getElementById('pontosO')
 const linha = document.getElementById('linha')
-
-ptsX.innerHTML = `${player1} - ${pontosX}`
-ptsO.innerHTML = `${player2} - ${pontosO}`
 
 function jogar() {
     for (let i = 0; i < jogo.length; i++) {
@@ -26,7 +23,7 @@ function jogar() {
             }
 
             if (espaco.innerHTML === '') {
-                espaco.innerHTML = currentPlayer
+                espaco.innerHTML = jogadorAtual
                 if (!checarVitoria()) {
                     checarEmpate()
                 }
@@ -45,31 +42,34 @@ function checarVitoria() {
     let vitoria = false
 
     if (jogo[0].innerHTML !== '' && jogo[0].innerHTML === jogo[1].innerHTML && jogo[1].innerHTML === jogo[2].innerHTML) {
-        mensagem.innerHTML = `${currentPlayer} venceu!`
+        mensagem.innerHTML = `${jogadorAtual} venceu!`
         fimDoJogo = true
         vitoria = true
         linha.style.display = 'flex'
         linha.style.position = 'relative'
+        linha.style.transform = 'rotate(0deg)'
         linha.style.top = '-548px'
     }
     if (jogo[3].innerHTML !== '' && jogo[3].innerHTML === jogo[4].innerHTML && jogo[4].innerHTML === jogo[5].innerHTML) {
-        mensagem.innerHTML = `${currentPlayer} venceu!`
+        mensagem.innerHTML = `${jogadorAtual} venceu!`
         fimDoJogo = true
         vitoria = true
         linha.style.display = 'flex'
         linha.style.position = 'relative'
+        linha.style.transform = 'rotate(0deg)'
         linha.style.top = '-447px'
     }
     if (jogo[6].innerHTML !== '' && jogo[6].innerHTML === jogo[7].innerHTML && jogo[7].innerHTML === jogo[8].innerHTML) {
-        mensagem.innerHTML = `${currentPlayer} venceu!`
+        mensagem.innerHTML = `${jogadorAtual} venceu!`
         fimDoJogo = true
         vitoria = true
         linha.style.display = 'flex'
         linha.style.position = 'relative'
+        linha.style.transform = 'rotate(0deg)'
         linha.style.top = '-346px'
     }
     if (jogo[0].innerHTML !== '' && jogo[0].innerHTML === jogo[3].innerHTML && jogo[3].innerHTML === jogo[6].innerHTML) {
-        mensagem.innerHTML = `${currentPlayer} venceu!`
+        mensagem.innerHTML = `${jogadorAtual} venceu!`
         fimDoJogo = true
         vitoria = true
         linha.style.display = 'flex'
@@ -79,7 +79,7 @@ function checarVitoria() {
         linha.style.left = '-104px'
     }
     if (jogo[1].innerHTML !== '' && jogo[1].innerHTML === jogo[4].innerHTML && jogo[4].innerHTML === jogo[7].innerHTML) {
-        mensagem.innerHTML = `${currentPlayer} venceu!`
+        mensagem.innerHTML = `${jogadorAtual} venceu!`
         fimDoJogo = true
         vitoria = true
         linha.style.display = 'flex'
@@ -89,7 +89,7 @@ function checarVitoria() {
         linha.style.left = '0px'
     }
     if (jogo[2].innerHTML !== '' && jogo[2].innerHTML === jogo[5].innerHTML && jogo[5].innerHTML === jogo[8].innerHTML) {
-        mensagem.innerHTML = `${currentPlayer} venceu!`
+        mensagem.innerHTML = `${jogadorAtual} venceu!`
         fimDoJogo = true
         vitoria = true
         linha.style.display = 'flex'
@@ -99,7 +99,7 @@ function checarVitoria() {
         linha.style.left = '104px'
     }
     if (jogo[0].innerHTML !== '' && jogo[0].innerHTML === jogo[4].innerHTML && jogo[4].innerHTML === jogo[8].innerHTML) {
-        mensagem.innerHTML = `${currentPlayer} venceu!`
+        mensagem.innerHTML = `${jogadorAtual} venceu!`
         fimDoJogo = true
         vitoria = true
         linha.style.display = 'flex'
@@ -110,7 +110,7 @@ function checarVitoria() {
         linha.style.left = '-53px'
     }
     if (jogo[2].innerHTML !== '' && jogo[2].innerHTML === jogo[4].innerHTML && jogo[4].innerHTML === jogo[6].innerHTML) {
-        mensagem.innerHTML = `${currentPlayer} venceu!`
+        mensagem.innerHTML = `${jogadorAtual} venceu!`
         fimDoJogo = true
         vitoria = true
         linha.style.display = 'flex'
@@ -135,17 +135,19 @@ function checarEmpate() {
 
     if (deuEmpate) {
         mensagem.innerHTML = 'Empate'
-        mudarJogador()
     }
 }
 
 function mudarJogador() {
-    if (currentPlayer === player1) {
-        currentPlayer = player2
+    if (jogadorAtual === player1) {
+        jogadorAtual = player2
     } else {
-        currentPlayer = player1
+        jogadorAtual = player1
     }
 }
+
+ptsX.innerHTML = `${player1} - ${pontosX}`
+ptsO.innerHTML = `${player2} - ${pontosO}`
 
 function pontos() {
     if (mensagem.innerHTML === '❌ venceu!') {
@@ -169,9 +171,7 @@ btn.addEventListener("click", function () {
     fimDoJogo = false
     linha.style.display = 'none'
     linha.style.position = 'absolute'
-    linha.style.transform = 'rotate(0deg)'
     linha.style.top = '0px'
     linha.style.left = '0px'
     linha.style.width = '350px'
-    mudarJogador()
 })
